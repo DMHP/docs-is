@@ -1,6 +1,7 @@
-# Enable Authentication for OAuth/OpenID Connect Web Application
+# Enable Login for OpenID Connect Web Application
+<**TO DO : We need to get rid of the word Authentication and OAuth. Changed the topic, but suggestions are welcome**>
 
-This page guides you through enabling authentication to an OAuth/OpenID Connect web application using a **sample application** called Pickup. 
+This page guides you through enabling login to an OpenID Connect web application using a **sample application** called Pickup. 
 
 ----
 If you have your own application, click the button below.
@@ -29,7 +30,7 @@ You have successfully configured authentication for an OpenID Connect applicatio
 
 ----
 
-{!fragments/oidc-logout.md!}
+<**TO DO : Include all the related topics here, including advanced configurations,webapp-oidc and logout**>
 
 
 

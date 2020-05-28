@@ -1,12 +1,13 @@
-# Enable Authentication for an OIDC Web Application
+# Enable Login for an OIDC Web Application
+<**TODO Need to re-think on changing the topic name, may be to get rid of the word authentication.**>
 
-This page guides you through enabling authentication to an [OAuth/OpenID Connect](../../../concepts/authorization/intro-oidc) web application. 
+This page guides you through enabling login to an [OpenID Connect](../../../concepts/authentication/intro-oidc/) web application. 
 
 ---
 
 This guide assumes you have your own application. If you wish to try out this flow with a sample application, click the button below. 
 
-<a class="samplebtn_a" href="../../../quick-starts/webapp-oidc-sample" target="_blank" rel="nofollow noopener">Try it with the sample</a>
+<a class="samplebtn_a" href="../../../quick-starts/regular-webapp-oidc-sample" rel="nofollow noopener">Try it with the sample</a>
 
 ----
 
@@ -17,7 +18,6 @@ This guide assumes you have your own application. If you wish to try out this fl
 {!fragments/oauth-app-config-basic.md!}
 
 ----
-
 ## Configure the client application
 
 Make the following requests via your application to connect your application to WSO2 IS. 
@@ -27,7 +27,7 @@ Make the following requests via your application to connect your application to 
     ```tab="Request Format"
     https://<host>/oauth2/authorize?scope=openid&response_type=code
     &redirect_uri=<redirect_uri>
-    &client_id=<OAuth Client Key>
+    &client_id=<oauth_client_key>
     ```
 
     ```tab="Sample Request"
@@ -36,13 +36,16 @@ Make the following requests via your application to connect your application to 
     &client_id=YYVdAL3lLcmrubZ2IkflCAuLwk0a
     ```
 
-2. Obtain the access token by sending a token request to the token endpoint using the `authorization_code` recieved in step 1, and the `OAuth Client Key` and `<OAuth Client Secret>` obtained when configuring the service provider.
+2. Obtain the access token by sending a token request to the token endpoint using the `authorization_code` recieved in step 1, and the `oauth_client_key` and `oauth_client_secret` obtained when configuring the service provider.
+<**TODO : In the request format and sample request, the font colour is not consistent. Need to have a look**>
+<**TODO : Add steps on how to obtain the access token as a public client without passing the client secret**>
+
+
 
     ```tab="Request Format"
-    curl -i -X POST -u <OAuth Client Key>:<Client Secret> -k -d 
+    curl -i -X POST -u <oauth_client_key>:<client_secret> -k -d 
     'grant_type=authorization_code&redirect_uri=<redirect_uri>
-    &code=<authorization_code>' 
-    https://localhost:9443/oauth2/token
+    &code=<authorization_code>' https://localhost:9443/oauth2/token
     ```
 
     ```tab="Sample Request"
@@ -54,10 +57,10 @@ Make the following requests via your application to connect your application to 
 
 3. Validate the ID token. For the token request, you will receive a response containing the access token, scope, and ID token. The ID token contains basic user information. To check what is encoded within the ID token, you can use a tool such as <https://devtoolzone.com/decoder/jwt>.
 
-----
+<**TODO Add a postman collection to the curl commands**>
+---
 
-{!fragments/oidc-session-management.md!}
+!!! info "Related Topics"
+		-   [Enable Authentication for OAuth/OpenID Connect Web Application](../../../quick-starts/regular-webapp-oidc-sample)
+		- **<TODO Add all the Related Topics here>**
 
-----
-
-{!fragments/oidc-backchannel-logout.md!}

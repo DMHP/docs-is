@@ -2,7 +2,7 @@
 
 **Sample prerequisites**
 
-- Download Apache Tomcat 8.x from
+- Download Apache Tomcat 8.x from <**TO DO : Have we tested 5.11.0 sample apps with tomcat 9**>
 [here](https://tomcat.apache.org/download-80.cgi) and install. Tomcat
 server installation location will be referred as `<TOMCAT_HOME>` later
 in this guide.

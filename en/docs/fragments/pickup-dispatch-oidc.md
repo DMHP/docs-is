@@ -37,7 +37,7 @@ Follow the instructions below to download the sample from GitHub.
 1. Navigate to [WSO2 Identity Server Samples](https://github.com/wso2/samples-is/releases).
 
 2. [Download](https://github.com/wso2/samples-is/releases/download/v4.1.0/pickup-dispatch.war) the `pickup-dispatch.war` file from the latest release assets.
-
+<**TO DO : Change the location of the sample to 5.11.0 one**>
 ### Deploy the sample web app
 
 Next, deploy the sample web app on a web container.
